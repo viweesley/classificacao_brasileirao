@@ -26,6 +26,7 @@
                                             <td style="width: 60%"> Posição</td>
                                             <td>PTS</td>
                                             <td>J</td>
+                                            <td>V</td>
                                             <td>E</td>
                                             <td>D</td>
                                             <td>GP</td>
@@ -33,25 +34,7 @@
                                             <td>SG</td>
                                         </tr>
                                     </thead>
-            
-                                    <tbody>
-                                        <tr class="down libertadores">
-                                           <td class="clube">
-                                                <div class="icon-classificacao pr-3 d-flex">
-                                                    <i class="fas fa-chevron-down"></i>
-                                                </div>
-                                                <img src="https://ssl.gstatic.com/onebox/media/sports/logos/gb8bo2x00XsbvsVp9nGniA_48x48.png" style="width:22px;height:22px" >
-                                                <span class="pl-1">Goias </span>
-                                           </td>
-                                           <td> <strong> 0 </strong> </td>
-                                           <td>0</td>
-                                           <td>0</td>
-                                           <td>0</td>
-                                           <td>0</td>
-                                           <td>0</td>
-                                           <td>0</td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody></tbody>
                                 </table>
                             </div>
                         </div>

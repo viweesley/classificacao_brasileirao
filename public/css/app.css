@@ -10942,12 +10942,20 @@ a.text-dark:focus {
   color: green;
 }
 
+.table-classificacao .campeao {
+  border-left-color: #DBA728;
+}
+
+.table-classificacao .campeao .clube {
+  border-left: 1.5px solid #DBA728;
+}
+
 .table-classificacao .libertadores {
   border-left-color: blue;
 }
 
 .table-classificacao .libertadores .clube {
-  border-left: 1px solid blue;
+  border-left: 1.5px solid blue;
 }
 
 .table-classificacao .pre-libertadores {
@@ -10955,7 +10963,7 @@ a.text-dark:focus {
 }
 
 .table-classificacao .pre-libertadores .clube {
-  border-left: 1px solid orange;
+  border-left: 1.5px solid orange;
 }
 
 .table-classificacao .sul-americana {
@@ -10963,7 +10971,7 @@ a.text-dark:focus {
 }
 
 .table-classificacao .sul-americana .clube {
-  border-left: 1px solid green;
+  border-left: 1.5px solid green;
 }
 
 .table-classificacao .rebaixamento {
@@ -10971,6 +10979,6 @@ a.text-dark:focus {
 }
 
 .table-classificacao .rebaixamento .clube {
-  border-left: 1px solid red;
+  border-left: 1.5px solid red;
 }
 

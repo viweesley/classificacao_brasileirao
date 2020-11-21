@@ -5,6 +5,7 @@ $color-libertadores: blue;
 $color-pre-libertadores: orange;
 $color-sul-americana: green;
 $color-rebaixamento: red;
+$color-campeao: #DBA728;
 
 
 .table-classificacao {
@@ -47,11 +48,19 @@ $color-rebaixamento: red;
         color: $color-up;
     }
 
+    .campeao{
+        border-left-color: $color-campeao;
+
+        .clube{
+            border-left: 1.5px solid $color-campeao;
+        }
+    }
+
     .libertadores{
         border-left-color: $color-libertadores;
 
         .clube{
-            border-left: 1px solid $color-libertadores;
+            border-left: 1.5px solid $color-libertadores;
         }
     }
 
@@ -59,7 +68,7 @@ $color-rebaixamento: red;
         border-left-color: $color-pre-libertadores;
 
         .clube{
-            border-left: 1px solid $color-pre-libertadores;
+            border-left: 1.5px solid $color-pre-libertadores;
         }
     }
 
@@ -67,7 +76,7 @@ $color-rebaixamento: red;
         border-left-color: $color-sul-americana;
 
         .clube{
-            border-left: 1px solid $color-sul-americana;
+            border-left: 1.5px solid $color-sul-americana;
         }
     }
 
@@ -75,7 +84,7 @@ $color-rebaixamento: red;
         border-left-color: $color-rebaixamento;
 
         .clube{
-            border-left: 1px solid $color-rebaixamento;
+            border-left: 1.5px solid $color-rebaixamento;
         }
     }
 }
