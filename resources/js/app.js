@@ -1,1 +1,5 @@
 require('./bootstrap');
+
+import '@fortawesome/fontawesome-free/js/all.js';
+
+require('./home/index');

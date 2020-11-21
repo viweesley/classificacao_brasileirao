@@ -1,0 +1,81 @@
+$color-down: red;
+$color-up: green;
+
+$color-libertadores: blue;
+$color-pre-libertadores: orange;
+$color-sul-americana: green;
+$color-rebaixamento: red;
+
+
+.table-classificacao {
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+
+    tr{
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        justify-content: spce
+    }
+
+    td {
+        border-bottom: none;
+        text-align: center;
+    }
+
+    thead {
+        border: none;
+
+        td:nth-child(1){
+            text-align: left;
+        }
+    }
+
+    tbody{
+        .clube{
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .down .icon-classificacao{
+        color: $color-down;
+    }
+
+    .up .icon-classificacao{
+        color: $color-up;
+    }
+
+    .libertadores{
+        border-left-color: $color-libertadores;
+
+        .clube{
+            border-left: 1px solid $color-libertadores;
+        }
+    }
+
+    .pre-libertadores{
+        border-left-color: $color-pre-libertadores;
+
+        .clube{
+            border-left: 1px solid $color-pre-libertadores;
+        }
+    }
+
+    .sul-americana{
+        border-left-color: $color-sul-americana;
+
+        .clube{
+            border-left: 1px solid $color-sul-americana;
+        }
+    }
+
+    .rebaixamento{
+        border-left-color: $color-rebaixamento;
+
+        .clube{
+            border-left: 1px solid $color-rebaixamento;
+        }
+    }
+}
