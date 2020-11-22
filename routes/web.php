@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClassificacaoController;
+use App\Http\Controllers\JogoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,7 @@ use App\Http\Controllers\ClassificacaoController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/classificacao', [ClassificacaoController::class, 'index'])->name('classificacao.index');
+Route::post('/confronto', [JogoController::class, 'store'])->name('jogo.store');
+
+
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Jogo;
 
 class Clube extends Model
 {
@@ -17,13 +18,28 @@ class Clube extends Model
         'pontos',
         'jogos',
         'vitorias',
+        'derrotas',
         'empates',
         'gols_pro',
         'gols_contra',
         'saldo_gols'
     ];
 
-    protected function teste(){
-        echo 'oi';
+    public $timestamps = false;  
+
+
+    public function updateByJogo($pontos, $golsRealizados, $golsSofridos){
+        $this->pontos = $this->pontos + $pontos;
+        $this->jogos++;
+        if ($pontos === 3) $this->vitorias++;
+        else if ($pontos === 1) $this->empates++;
+        else $this->derrotas++;
+        $this->gols_pro = $this->gols_pro + $golsRealizados;
+        $this->gols_contra = $this->gols_contra + $golsSofridos; 
+        $this->saldo_gols = $this->gols_pro - $this->gols_contra; 
+        $this->save();
+        
+        return true;
+       
     }
 }

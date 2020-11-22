@@ -4,18 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Clube;
+use Illuminate\Support\Facades\DB;
+use App\Models\Jogo;
 
 class ClassificacaoController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $classificacao = Clube::orderBy('pontos', 'desc')
         ->orderBy('vitorias', 'desc')
-        ->orderBy('empates', 'desc')
-        ->orderBy('derrotas', 'asc')
-        ->orderBy('gols_pro', 'desc')
-        ->orderBy('gols_contra', 'asc')
         ->orderBy('saldo_gols', 'desc')
-        ->orderBy('nome', 'asc')
+        ->orderBy('gols_pro', 'desc')
+        ->orderByDesc(
+            DB::table('clubes AS clubes2')->selectRaw('count(*)')
+                ->join('jogos', function ($join) {
+                    $join->on('jogos.clube_mandante_id', '=', 'clubes.id')
+                    ->whereColumn('jogos.clube_visitante_id', '=', 'clubes2.id')
+                    ->whereColumn('jogos.gols_mandante', '>' , 'jogos.gols_visitante')
+                    ->orOn('jogos.clube_visitante_id', '=', 'clubes.id')
+                    ->whereColumn('jogos.clube_mandante_id', '=', 'clubes2.id')
+                     ->whereColumn('jogos.gols_mandante', '<' , 'jogos.gols_visitante');
+                })
+                ->whereColumn('clubes2.jogos', 'clubes.jogos')
+                ->whereColumn('vitorias', 'clubes.vitorias')
+                ->whereColumn('clubes2.id', '!=', 'clubes.id')
+        )
+        ->orderBy('gols_contra', 'asc')
         ->get();
 
         $classificacao->map(function ($item, $key) {
